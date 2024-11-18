@@ -1,0 +1,291 @@
+.conv {
+    width: 100%;
+    height: 100vh;
+    background-color: #121216;
+    display: flex;
+    flex-direction: row;
+}
+
+.conv .conv-era {
+    width: 70%;
+    min-width: 60%;
+    /* max-width: 100%; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.no-conv-yet {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4); /* White color with 20% opacity */
+    letter-spacing: 1.5px;
+    font-size: large;
+}
+
+.conv .conv-era .header {
+    width: 100%;
+    height: 75px;
+    width: full;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-bottom: 0.2px solid rgba(200, 208, 208, 0.4);
+}
+
+.conv .conv-era .header .menu-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+@media (min-width: 767px) {
+    .conv .conv-era .header .menu-icon {
+        display: none;
+    }
+}
+
+
+.conv .profile {
+    flex-grow: 1;
+    height: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #000000; */
+    background-color: #121216;
+
+}
+
+.conv .profile .pictures {
+    width: 100%;
+    min-height: 400px;
+    height: 60%;
+    padding: 10px;
+    display: flex;
+}
+
+.conv .profile .pictures .match-picture {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    object-fit: cover;
+}
+
+.conv .profile .bio {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.conv .profile .bio .name-age {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    border-bottom: 0.2px solid rgba(200, 208, 208, 0.3);
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    padding: 10px;
+
+}
+.conv .profile .bio .name-age .username{
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    text-transform: capitalize;
+}
+.conv .profile .bio .name-age .location .location-icon{
+    width: 30px;
+    height: 25px;
+}
+
+.conv .profile .bio .name-age .location{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    color: rgb(125, 120, 120);
+}
+#location {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.conv .profile .bio .intrested-in-relation{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    padding: 20px;
+    margin: auto;
+
+}
+
+.conv .profile .bio .intrested-in-relation .tag{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 1rem;
+    /* padding: 5px; */
+    color: rgb(214, 155, 165);
+    background-color: rgba(87, 78, 215, 0.5);
+    border-radius: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.conv .profile .bio .name-age .intrested-in-relation .tag .heart-icon{
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .conv .profile {
+        display: none ;
+    }
+    .conv .conv-era {
+        width: 100%;
+        padding: 0 5px;
+        font-size: 0.9rem;
+    }
+   
+}
+
+@media (max-width: 425px) {
+    .conv .conv-era {
+        width: 100%;
+        padding: 0 2px;
+        font-size: 0.7rem;
+    }
+    .conv .conv-era .header .userInfos {
+        width : 80%;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .conv .conv-era .header .userInfos .userPicture {
+        width : 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        /* margin-right: 10px; */
+        border: 2px solid rgba(255, 255, 255, 0.906);
+    }
+}
+
+.conv .conv-era .header .userInfos {
+    width : 90%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 0.7;
+}
+
+.conv .conv-era .header .userInfos .userPicture {
+    min-width : 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.906);
+}
+
+.conv .conv-era .header .userInfos .user-details {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.conv .conv-era .header .conv-settings {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.conv .conv-era .header .conv-settings .icon-picture{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+/* styling messages */
+.conv .conv-era .conversation-history {
+    height: 88%;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #121216;
+
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+    gap: 10px; 
+}
+
+.conv .conv-era .conversation-history .message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    display: inline-block; /* Keeps messages as block elements */
+    word-break: break-word; /* Breaks long words */
+    overflow-wrap: break-word;
+
+}
+
+.conv .conv-era .conversation-history .message.user {
+    background: #574ed7;
+    align-self: flex-end;
+}
+
+.conv .conv-era .conversation-history .message.match {
+    /* background: linear-gradient(90deg, rgba(253,85,100,1) 0%, rgba(239,74,117,1) 50%, rgba(244,69,116,1) 80%); */
+    background-color: #2e2e2e;
+    align-self: flex-start;
+}
+
+.conv-era .message-input {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border-top: 1px solid rgba(200, 208, 208, 0.4);
+    justify-content: space-between;
+}
+
+.conv-era .message-input input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: 2px solid transparent; 
+
+}
+
+.conv-era .message-input .send-button {
+    flex-grow: 1;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(253,85,100,1) 0%, rgba(239,74,117,1) 50%, rgba(244,69,116,1) 80%);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}

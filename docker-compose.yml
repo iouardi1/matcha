@@ -1,0 +1,49 @@
+services:
+  next-app:
+    build:
+      context: ./matcha-frontend
+      dockerfile: Dockerfile
+    image: next-app
+    container_name: next-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - express-app
+    env_file:
+      - matcha-frontend/.env
+    restart: always
+
+  express-app:
+    build:
+      context: matcha-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3005:3005"
+    depends_on:
+      - db
+    env_file:
+      - matcha-backend/.env
+    image: express-app
+    container_name: express-app
+    restart: always
+  
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    env_file:
+      - matcha-backend/.env
+    restart: always
+    container_name: db
+    volumes:
+      - ./matcha-backend/db:/docker-entrypoint-initdb.d
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - next-app
+    volumes:
+      - ./matcha-frontend/default.conf:/etc/nginx/conf.d/default.conf

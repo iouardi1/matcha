@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: #3e1e68;
+}
+
+.auth-input {
+    padding-left: 0.5rem;
+    width: 100%;
+    border: 0;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 0.375rem;
+    background-color: transparent;
+    border: 1px inset #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.auth-input::placeholder {
+    color: #9ca3af;
+}
+
+.auth-input:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fd5564;
+}
+
+.auth-submit {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 0.375rem;
+    background-color: #fd5564;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.auth-submit:hover {
+    background-color: #fd5564;
+}
+
+.auth-submit:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    outline-color: #fd5564;
+}

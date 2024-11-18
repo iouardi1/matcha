@@ -1,0 +1,243 @@
+.sidebar {
+    width: 100%;
+    min-width: 300px;
+    max-width: 350px;
+    height: 100vh;
+    background-color: #121113;
+    /* position: fixed; */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sidebar .header {
+    height: 75px;
+    background: rgb(253,85,100);
+    background: linear-gradient(90deg, rgba(253,85,100,1) 0%, rgba(239,74,117,1) 50%, rgba(244,69,116,1) 80%);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.sidebar .matches-messages {
+    height: 50px;
+    background-color: black;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-right: 0.2px solid rgba(200, 208, 208, 0.4);
+
+}
+
+.sidebar .content {
+    width: 100%;
+    height: 82%;
+    border-right: 0.2px solid rgba(200, 208, 208, 0.3);
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+.sidebar .matches-messages button {
+    color: white;
+    padding: 5px 10px;
+    font-size: 1rem;
+    position: relative;
+}
+
+.sidebar .matches-messages button.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(253,85,100,1) 0%, rgba(239,74,117,1) 50%, rgba(244,69,116,1) 80%);
+    border-radius: 5px;
+}
+
+.sidebar .header .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .header .profile-info .menu-icon-sidebar {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+@media (min-width: 767px) {
+    .sidebar .header .profile-info .menu-icon-sidebar {
+        display: none;
+    }
+}
+
+.sidebar .header .picture {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+
+}
+
+.sidebar .header .username {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+}
+
+.sidebar .header .icons {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .header .icons .icon1,
+.sidebar .header .icons .icon2 {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow to icons */
+    object-fit: cover;
+
+}
+
+/* Add hover effect to icons */
+.sidebar .header .icons .icon1:hover,
+.sidebar .header .icons .icon2:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.sidebar .matches-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.sidebar .matches-content .match {
+    width: 100px;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 0 4px 4px rgba(247, 242, 242, 0.1);
+    position: relative;
+    /* border-radius: 6px; */
+
+}
+
+@media (min-width: 1024px) {
+    .sidebar .content .matches-content .match {
+        width: 83px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2px;
+        box-shadow: 0 4px 4px rgba(247, 242, 242, 0.1);
+        position: relative;
+    }
+}
+
+.sidebar .matches-content .match .match-number {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 6px;
+    position: relative;
+    border: 3px solid gold;
+    object-fit: cover;
+}
+
+.sidebar .matches-content .match-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sidebar .matches-content p {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    z-index: 1;
+    text-transform: capitalize;
+}
+
+.sidebar .messages-content {
+    width: 100%;
+    height : 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar .content .messages-content .conversation {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.sidebar .content .messages-content .conversation .conv-details {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.sidebar .messages-content .conversation .conversation-picture {
+    min-width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    /* margin-right: 15px; */
+    object-fit: cover;
+
+}
+
+.sidebar .content .messages-content .conversation .conv-details .last-message {
+    /* width: 100%; */
+    max-height: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 100;
+    overflow: hidden;
+    text-align: left;
+}
+
+.sidebar .messages-content .name {
+    text-align: left;
+    color: white;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
